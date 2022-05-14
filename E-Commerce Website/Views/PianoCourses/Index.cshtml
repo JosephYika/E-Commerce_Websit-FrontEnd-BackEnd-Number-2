@@ -19,26 +19,21 @@
                         <div class="card-header text-white bg-info">
                             <p class="card-text">
                                 <h5 class="card-title">
-                                    Movie Name Sample
+                                    @item.Name
                                     <a class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
                                 </h5>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="@item.ImageURL" width="100%" alt="@item.Name" >
+                        <img src="@item.ImageURL"   alt="@item.Name" >
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
                             <p class="card-text">@item.Description</p>
-                            <p class="card-text"><b>Cinema: </b>Name Sample</p>
-                            <p class="card-text"><b>Category: </b>Name Sample</p>
-                            <p class="card-text"><b>Start Date: </b>Name Sample</p>
-                            <p class="card-text"><b>End Date: </b>Name Sample</p>
-                            <p class="card-text ">
-                                <b>Status: </b>
-                                Status Sample
-                            </p>
+                            <p class="card-text"><b>Level: </b>@item.Level</p>
+                            <p class="card-text"><b>Category: </b>@item.CourseCategory</p>
+                           
 
                         </div>
                     </div>
@@ -46,7 +41,7 @@
                         <div class="card-footer ">
                             <p class="card-text">
                                 <a class="btn btn-outline-primary float-right"><i class="bi bi-eye-fill"></i> Show Details</a>
-                                <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Add to Cart ($X.XX)</a>
+                                <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))</a>
                             </p>
                         </div>
                     </div>

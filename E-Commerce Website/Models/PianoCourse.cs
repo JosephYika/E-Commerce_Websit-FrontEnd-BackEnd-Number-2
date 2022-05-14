@@ -19,6 +19,8 @@ namespace E_Commerce_Website.Models
 
         public string ImageURL { get; set; }
 
+        public string Level { get; set; }
+
         public CourseCategory CourseCategory { get; set; }
 
 

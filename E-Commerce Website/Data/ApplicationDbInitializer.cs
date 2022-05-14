@@ -30,17 +30,19 @@ namespace E_Commerce_Website.Data
                             Name = "Advanced Music Thoery II",
                             Description = "Learn everything about advanced music theory",
                             Price = 150,
-                            ImageURL = "Images/AdMusicTheory.jpg",
-                            CourseCategory = CourseCategory.MusicTheory
-
+                            ImageURL = "Images/advancedmusic.jpg",
+                            CourseCategory = CourseCategory.MusicTheory,
+                            Level = "Advanced"
+                            
                         },
                          new PianoCourse()
                         {
                             Name = "Basisc of Music Theory I",
                             Description = "Learn everything about basics music theory",
                             Price = 45,
-                            ImageURL = "Images/Image2.jpg",
-                            CourseCategory = CourseCategory.MusicTheory
+                            ImageURL = "Images/AdMusicTheory.jpg",
+                            CourseCategory = CourseCategory.MusicTheory,
+                            Level = "Beginner"
 
                         },
                           new PianoCourse()
@@ -48,17 +50,18 @@ namespace E_Commerce_Website.Data
                             Name = "Basics of Clarinet",
                             Description = "Learn everything about basics of Clarinet",
                             Price = 245,
-                            ImageURL = "Images/AdMusicTheory.jpg",
-                            CourseCategory = CourseCategory.MusicTheory
-
+                            ImageURL = "Images/Clarinet.jpg",
+                            CourseCategory = CourseCategory.MusicPractice,
+                            Level = "Beginner"
                         },
                            new PianoCourse()
                         {
                             Name = "Introduction to Piano Chords",
-                            Description = "Learn everything about piano chords",
+                            Description = "Learn everything about basics of piano chords",
                             Price = 45,
-                            ImageURL = "Images/AdMusicTheory.jpg",
-                            CourseCategory = CourseCategory.MusicTheory
+                            ImageURL = "Images/Piano.jpg",
+                            CourseCategory = CourseCategory.MusicPractice,
+                            Level = "Beginner"
 
                         },
                             new PianoCourse()
@@ -66,17 +69,19 @@ namespace E_Commerce_Website.Data
                             Name = "Introduction to Saxophone",
                             Description = "Learn everything about  basics of saxophone",
                             Price = 150,
-                            ImageURL = "Images/AdMusicTheory.jpg",
-                            CourseCategory = CourseCategory.MusicTheory
+                            ImageURL = "Images/Saxophone (2).jpg",
+                            CourseCategory = CourseCategory.MusicPractice,
+                            Level = "Beginner"
 
                         },
                              new PianoCourse()
                         {
-                            Name = "Intervals Introduction",
-                            Description = "Learn everything about the basics of intervals",
+                            Name = "Music Production",
+                            Description = "Learn everything about the basics of music production",
                             Price = 55,
-                            ImageURL = "Images/AdMusicTheory.jpg",
-                            CourseCategory = CourseCategory.MusicTheory
+                            ImageURL = "Images/Image2.jpg",
+                            CourseCategory = CourseCategory.MusicPractice,
+                            Level = "Beginner"
 
                         },
                     });

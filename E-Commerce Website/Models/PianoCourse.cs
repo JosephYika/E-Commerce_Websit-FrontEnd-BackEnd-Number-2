@@ -25,10 +25,13 @@ namespace E_Commerce_Website.Models
         public CourseCategory CourseCategory { get; set; }
 
 
-        /*One Movie can have one or multiple authors. This means that I have to have a joint table
-         between a Movie and Authors*/
+        /*One Course can have one or multiple authors. This means that I have to have a joint table
+         between a Course and Authors*/
         public List<Author_Course> Authors_Courses { get; set; }
 
-        
+  
+        public List<Author> Authors { get; set; }
+
+
     }
 }

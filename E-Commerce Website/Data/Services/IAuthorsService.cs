@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_Website.Data.Services
 {
-    public interface IAuthorsService:IEntityBaseRepository<Author>
+    public interface IAuthorsService : IEntityBaseRepository<Author>
     {
-        
+       
     }
 }

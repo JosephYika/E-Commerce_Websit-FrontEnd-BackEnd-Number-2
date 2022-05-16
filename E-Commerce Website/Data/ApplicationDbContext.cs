@@ -28,6 +28,9 @@ namespace E_Commerce_Website.Data
 
             modelBuilder.Entity<Author_Course>().HasOne(m => m.Author).WithMany(ac => ac.Authors_Courses).HasForeignKey(m => m.AuthorId);
             base.OnModelCreating(modelBuilder);
+
+            //modelBuilder.Entity<Author>().HasMany(c => c.PianoCourses).WithMany(pc => pc.Authors);
+            //modelBuilder.Entity<PianoCourse>().HasMany(c => c.Authors).WithMany(pc => pc.PianoCourses);
         }
 
         public DbSet<Author> Authors { get;set; }

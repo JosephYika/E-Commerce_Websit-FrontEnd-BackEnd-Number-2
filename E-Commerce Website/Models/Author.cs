@@ -28,5 +28,7 @@ namespace E_Commerce_Website.Models
 
 
         public List<Author_Course> Authors_Courses { get; set; }
+
+        public List<PianoCourse> PianoCourses { get; set; }
     }
 }

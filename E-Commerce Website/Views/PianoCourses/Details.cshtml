@@ -1,5 +1,6 @@
 ﻿<!--Defining the model-->
 @model PianoCourse
+
 <!--Defining the vie data-->
 
 @{
@@ -36,11 +37,11 @@
                             <p class="card-text">
                                 <b>Authors: </b>
                                 <hr />
-                                <div class="row">
+                                <div class="row">                             
                                     @foreach (var author in Model.Authors_Courses)
                                     {
                                         <div class="column text-center">
-                                            <img class="border-info rounded-circle" src="@author.Author.ProfilePictureURL" style="max-width: 150px" />
+                                            <img class="border-info rounded-circle" src="@author.Author.ProfilePictureURL" style="max-width: 100px" />
                                             <br />
                                             <a asp-controller="Authors" asp-action="Details" asp-route-id="@author.AuthorId">@author.Author.FullName</a>
                                         </div>

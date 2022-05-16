@@ -1,4 +1,5 @@
 ﻿using E_Commerce_Website.Data;
+using E_Commerce_Website.Data.Base;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace E_Commerce_Website.Models
 {
-    public class PianoCourse
+    public class PianoCourse:IEntityBase
     {  
         [Key]
         public int Id { get; set; }

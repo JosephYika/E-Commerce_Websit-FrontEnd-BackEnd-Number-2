@@ -30,7 +30,7 @@ namespace E_Commerce_Website
             services.AddDbContext<ApplicationDbContext>(options=> options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection1")));
 
             services.AddScoped<IAuthorsService, AuthorsService>();
-
+            services.AddScoped<IPianoCoursesService, PianoCoursesService>();
 
             services.AddControllersWithViews();
         }

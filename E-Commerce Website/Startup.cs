@@ -1,4 +1,5 @@
 using E_Commerce_Website.Data;
+using E_Commerce_Website.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,7 +28,10 @@ namespace E_Commerce_Website
         {
             /*Adding Database Context */
             services.AddDbContext<ApplicationDbContext>(options=> options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection1")));
-            
+
+            services.AddScoped<IAuthorsService, AuthorsService>();
+
+
             services.AddControllersWithViews();
         }
 

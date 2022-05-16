@@ -1,17 +1,16 @@
 ﻿<!--Defining the model-->
 @model IEnumerable<Author>
-
-
 <!--Defining the vie data-->
 
-@{ 
+
+@{
     ViewData["Title"] = "List of Authors";
 }
 
 <!--main code-->
 <div class="row">
 
-    <div class="col-md-8 offset-md-2"">
+    <div class="col-md-8 offset-md-2" ">
 
         <table class="table">
             <thead></thead>
@@ -24,25 +23,32 @@
             <tbody>
                 @foreach (var item in Model)
                 {
-                <tr>
-                    <td class="align-middle">
-                        <img class="rounded-circle" src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 150px"/>
-                    </td>
-                    <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.FullName)
-                    </td>
-                    <td class="align-middle">
-                        @Html.DisplayFor(modelItem => item.Bio)
-                    </td>
-                    <td class="align-middle">
-                        <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Edit</a> |
-                        <a class="btn btn-outline-info"><i class="bi bi-pencil-eye"></i>Details</a> |
-                        <a class="btn btn-danger text-white"><i class="badge-info bi-pencil-trash"></i>Delete</a>
-                    </td>
-                </tr>
+                    <tr>
+                        <td class="align-middle">
+                            <img class="rounded-circle" src="@item.ProfilePictureURL" alt="@item.FullName" style="max-width: 150px" />
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td class="align-middle">
+                            @Html.DisplayFor(modelItem => item.Bio)
+                        </td>
+                        <td class="align-middle">
+                            <a class="btn btn-outline-primary"><i class="bi bi-pencil-square"></i>Edit</a> |
+                            <a class="btn btn-outline-info"><i class="bi bi-pencil-eye"></i>Details</a> |
+                            <a class="btn btn-danger text-white"><i class="badge-info bi-pencil-trash"></i>Delete</a>
+                        </td>
+                    </tr>
                 }
             </tbody>
 
         </table>
     </div>
+
 </div>
+
+<div style="position: fixed; right: 100px; top: 73px" class="text-white">
+    <a class="btn btn-success" asp-controller="Authors" asp-action="Create"><i class="bi bi-plus-circle"></i>Add new </a>
+
+</div>
+

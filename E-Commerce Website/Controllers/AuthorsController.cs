@@ -1,4 +1,5 @@
 ﻿using E_Commerce_Website.Data;
+using E_Commerce_Website.Data.Services;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,17 +11,23 @@ namespace E_Commerce_Website.Controllers
 
     public class AuthorsController : Controller
     {
-        private readonly ApplicationDbContext _context;
+        private readonly IAuthorsService _service;
 
-        public AuthorsController(ApplicationDbContext context)
+        public AuthorsController(IAuthorsService service)
         {
-            _context = context;
+            _service = service;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
 
-            var data = _context.Authors.ToList();
+            var data = await _service.GetAll();
             return View(data);
+        }
+
+
+        public IActionResult Create()
+        {
+            return View();
         }
     }
 }

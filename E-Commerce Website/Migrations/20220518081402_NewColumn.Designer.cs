@@ -4,14 +4,16 @@ using E_Commerce_Website.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace E_Commerce_Website.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220518081402_NewColumn")]
+    partial class NewColumn
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -122,7 +124,7 @@ namespace E_Commerce_Website.Migrations
 
                     b.HasIndex("PianoCourseId");
 
-                    b.ToTable("OrderItems");
+                    b.ToTable("OrederItems");
                 });
 
             modelBuilder.Entity("E_Commerce_Website.Models.PianoCourse", b =>
@@ -215,7 +217,7 @@ namespace E_Commerce_Website.Migrations
             modelBuilder.Entity("E_Commerce_Website.Models.OrderItem", b =>
                 {
                     b.HasOne("E_Commerce_Website.Models.Order", "Order")
-                        .WithMany("OrderItems")
+                        .WithMany()
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -247,11 +249,6 @@ namespace E_Commerce_Website.Migrations
             modelBuilder.Entity("E_Commerce_Website.Models.Author", b =>
                 {
                     b.Navigation("Authors_Courses");
-                });
-
-            modelBuilder.Entity("E_Commerce_Website.Models.Order", b =>
-                {
-                    b.Navigation("OrderItems");
                 });
 
             modelBuilder.Entity("E_Commerce_Website.Models.OrderItem", b =>

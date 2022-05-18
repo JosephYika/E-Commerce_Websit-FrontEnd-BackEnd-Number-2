@@ -1,7 +1,9 @@
 using E_Commerce_Website.Data;
+using E_Commerce_Website.Data.Cart;
 using E_Commerce_Website.Data.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -32,6 +34,10 @@ namespace E_Commerce_Website
             services.AddScoped<IAuthorsService, AuthorsService>();
             services.AddScoped<IPianoCoursesService, PianoCoursesService>();
 
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+            services.AddScoped(sc => ShoppingCart.GetShoppingCart(sc));
+            services.AddScoped<IOrdersService, OrdersService>();
+            services.AddSession();
             services.AddControllersWithViews();
         }
 
@@ -52,6 +58,7 @@ namespace E_Commerce_Website
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession(); 
 
             app.UseAuthorization();
 

@@ -47,8 +47,10 @@
 
 </div>
 
-<div style="position: fixed; right: 100px; top: 73px" class="text-white">
+@await Html.PartialAsync("_PartialViewCreateItem", "Authors") 
+
+@*<div style="position: fixed; right: 100px; top: 73px" class="text-white">
     <a class="btn btn-success" asp-controller="Authors" asp-action="Create"><i class="bi bi-plus-circle"></i>Add new </a>
 
-</div>
+</div>*@
 

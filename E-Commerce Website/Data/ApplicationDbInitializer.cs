@@ -33,7 +33,7 @@ namespace E_Commerce_Website.Data
                             ImageURL = "Images/advancedmusic.jpg",
                             CourseCategory = CourseCategory.MusicTheory,
                             Level = "Advanced"
-                            
+
                         },
                          new PianoCourse()
                         {

@@ -1,6 +1,5 @@
 ﻿<!--Defining the model-->
 @model IEnumerable<PianoCourse>
-
 <!--Defining the vie data-->
 
 @{
@@ -20,20 +19,20 @@
                             <p class="card-text">
                                 <h5 class="card-title">
                                     @item.Name
-                                    <a class="text-white float-right"><i class="bi bi-pencil-square"></i></a>
+                                    <a class="text-white float-right" asp-action="Edit" asp-route-id="@item.Id"><i class="bi bi-pencil-square"></i></a>
                                 </h5>
                             </p>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="@item.ImageURL"   alt="@item.Name" >
+                        <img src="@item.ImageURL" alt="@item.Name">
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <p class="card-text">@item.Description 
-                            <p class="card-text"><b>Level: </b>@item.Level</p>
+                            <p class="card-text">@item.Description
+                            <p class="card-text"><b>Level: </b>@item.Level </p>
                             <p class="card-text"><b>Category: </b>@item.CourseCategory</p>
-                           
+
 
                         </div>
                     </div>
@@ -41,7 +40,7 @@
                         <div class="card-footer ">
                             <p class="card-text">
                                 <a class="btn btn-outline-primary float-right" asp-action="Details" asp-route-id="@item.Id">
-                                <i class="bi bi-eye-fill"></i> Show Details
+                                    <i class="bi bi-eye-fill"></i> Show Details
                                 </a>
                                 <a class="btn btn-success text-white"><i class="bi bi-cart-plus"></i> Add to Cart (Price @item.Price.ToString("c"))</a>
                             </p>
@@ -52,3 +51,5 @@
         </div>
     }
 </div>
+
+@await Html.PartialAsync("_PartialViewCreateItem", "PianoCourses") 
